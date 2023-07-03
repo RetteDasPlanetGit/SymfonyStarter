@@ -9,6 +9,52 @@ Before starting, ensure that you have the following prerequisites installed on y
 - Docker: [Install Docker](https://docs.docker.com/get-docker/)
 - Docker Compose: [Install Docker Compose](https://docs.docker.com/compose/install/)
 
+## Components
+
+The Symfony app uses the following components:
+
+```text
+- PHP: >= 8.1
+- doctrine/annotations
+- doctrine/doctrine-bundle
+- doctrine/doctrine-migrations-bundle
+- doctrine/orm
+- ramsey/uuid
+- symfony/asset
+- symfony/console
+- symfony/dotenv
+- symfony/expression-language
+- symfony/flex
+- symfony/form
+- symfony/framework-bundle
+- symfony/http-client
+- symfony/mime
+- symfony/property-access
+- symfony/property-info
+- symfony/runtime
+- symfony/security-bundle
+- symfony/serializer
+- symfony/twig-bundle
+- symfony/validator
+- symfony/yaml
+```
+The development environment also includes the following components:
+```text
+- symfony/maker-bundle
+- symfony/stopwatch
+- symfony/web-profiler-bundle
+- twig/extra-bundle
+- twig/twig
+```
+The development environment also includes the following components:
+```text
+- symfony/maker-bundle
+- symfony/stopwatch
+- symfony/web-profiler-bundle
+- twig/extra-bundle
+- twig/twig
+```
+
 ## Getting Started
 
 Follow these steps to deploy your Symfony app:
