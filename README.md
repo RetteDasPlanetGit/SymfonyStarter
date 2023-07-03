@@ -22,12 +22,6 @@ Follow these steps to deploy your Symfony app:
 
 2. Configure Symfony app:
 
-    - Copy the `.env` file:
-
-        ```bash
-        cp .env.dist .env
-        ```
-
    - Generate a new `APP_SECRET`:
 
        ```bash
