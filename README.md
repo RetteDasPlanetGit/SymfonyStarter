@@ -28,6 +28,13 @@ Follow these steps to deploy your Symfony app:
         cp .env.dist .env
         ```
 
+   - Generate a new `APP_SECRET`:
+
+       ```bash
+       APP_SECRET=$(openssl rand -hex 32)
+       sed -i "s|^APP_SECRET=.*$|APP_SECRET=$APP_SECRET|" .env
+       ```
+
     - Update the necessary environment variables in the `.env` file, such as `APP_ENV`, `DATABASE_URL`, etc.
 
 3. Build and start Docker containers:
