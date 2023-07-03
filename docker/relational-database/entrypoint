@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+set -eu
+
+if [ 'postgres' = "${1}" ] && [ ! -e "${PGDATA}"/PG_VERSION ]; then
+    echo 'app' | initdb \
+        --username=app \
+        --pwfile=/dev/stdin \
+        --locale=C.UTF-8 \
+        --text-search-config=english \
+        --data-checksums
+
+    echo "host all all all $(postgres -C password_encryption)" >> "${PGDATA}"/pg_hba.conf
+
+    pg_ctl start --wait -o '-c listen_addresses=""'
+    createdb --username=app --no-password app
+    pg_ctl stop --wait --mode=fast
+fi
+
+exec "${@}"

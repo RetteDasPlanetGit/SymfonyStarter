@@ -1,0 +1,58 @@
+services:
+  app:
+    build:
+      context: .
+      target: app_development
+      args:
+        - APP_UID
+        - APP_GID
+    restart: always
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+  http-server:
+    build:
+      context: .
+      target: http-server_development
+      args:
+        - APP_UID
+        - APP_GID
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - type: volume
+        source: http-server-caddy-data
+        target: /data
+      - type: bind
+        source: ./public
+        target: /app/public
+        read_only: true
+  relational-database:
+    build:
+      context: .
+      target: relational-database_development
+      args:
+        - APP_UID
+        - APP_GID
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - type: volume
+        source: relational-database-postgresql-15-data
+        target: /var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+    restart: always
+    
+volumes:
+  http-server-caddy-data:
+  relational-database-postgresql-15-data:
