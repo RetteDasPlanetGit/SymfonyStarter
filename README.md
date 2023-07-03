@@ -9,6 +9,25 @@ Before starting, ensure that you have the following prerequisites installed on y
 - Docker: [Install Docker](https://docs.docker.com/get-docker/)
 - Docker Compose: [Install Docker Compose](https://docs.docker.com/compose/install/)
 
+### Install Docker
+```shell
+curl -fsSL https://get.docker.com -o get-docker.sh &&
+sudo sh get-docker.sh
+sudo usermod -aG docker $USER
+sudo systemctl enable docker
+sudo systemctl start docker
+```
+
+### Install Docker Compose (Plugin)
+```shell
+sudo apt-get install docker-compose-plugin -y
+```
+
+### Install Docker Compose (Standalone)
+```shell
+sudo apt-get install docker-compose -y
+```
+
 ## Components
 
 The Symfony app uses the following components:
