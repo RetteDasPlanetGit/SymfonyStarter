@@ -16,8 +16,8 @@ Follow these steps to deploy your Symfony app:
 1. Clone the repository:
 
     ```bash
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone https://github.com/RetteDasPlanetGit/SymfonyStarter.git
+    cd SymfonyStarter
     ```
 
 2. Configure Symfony app:
@@ -33,20 +33,21 @@ Follow these steps to deploy your Symfony app:
 3. Build and start Docker containers:
 
     ```bash
-    docker-compose up -d --build
+    docker compose build --build-arg APP_UID="$(id -u)" --build-arg APP_GID="$(id -g)"
+    docker compose up -d 
     ```
 
 4. Install Symfony dependencies:
 
     ```bash
-    docker-compose exec php composer install
+    sudo docker compose exec app composer install
     ```
 
 5. Set up the database:
 
     ```bash
-    docker-compose exec php bin/console doctrine:database:create
-    docker-compose exec php bin/console doctrine:migrations:migrate
+    sudo docker compose exec app bin/console doctrine:database:create
+    sudo docker compose exec app bin/console doctrine:migrations:migrate
     ```
 
 6. Access your Symfony app:
