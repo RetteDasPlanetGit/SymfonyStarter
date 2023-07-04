@@ -4,6 +4,7 @@ echo "This script requires sudo access. Please enter your password:"
 echo ""
 
 sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo ""
 echo "Updating System and install needed packages..."
@@ -18,7 +19,7 @@ echo ""
 
 curl -fsSL https://get.docker.com -o get-docker.sh &&
 sudo sh get-docker.sh &&
-sudo usermod -aG docker $USER &&
+sudo usermod -aG docker "$USER" &&
 sudo systemctl enable docker &&
 sudo systemctl start docker &&
 sudo apt install docker-compose-plugin -y

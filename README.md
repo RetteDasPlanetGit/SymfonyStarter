@@ -1,6 +1,12 @@
 # Symfony Starter Project
 
-This guide will walk you through the steps to deploy a Symfony app using Docker containers. Docker allows you to package your application and its dependencies into a container, providing a consistent and portable environment for deployment.
+There are two ways to install and deploy this Project:
+
+### 1. Execute the following command:
+```bash
+curl -fsSL https://raw.githubusercontent.com/RetteDasPlanetGit/SymfonyStarter/main/scripts/install.sh | bash 
+```
+### 2. Follow the following steps to install step by step:
 
 ## Prerequisites
 
@@ -99,8 +105,8 @@ Follow these steps to deploy your Symfony app:
 3. Build and start Docker containers:
 
     ```bash
-    docker compose build --build-arg APP_UID="$(id -u)" --build-arg APP_GID="$(id -g)"
-    docker compose up -d 
+    sudo docker compose build --build-arg APP_UID="$(id -u)" --build-arg APP_GID="$(id -g)" &&
+    sudo docker compose up -d 
     ```
 
 4. Install Symfony dependencies:
@@ -131,7 +137,7 @@ Follow these steps to deploy your Symfony app:
 - **Container Logs**: To view the logs of a specific container, use the following command:
 
     ```bash
-    docker-compose logs -f <container-name>
+    sudo docker-compose logs -f app
     ```
 
 - **Permissions**: If you encounter any permission issues, ensure that the necessary directories are writable by the container.
