@@ -9,9 +9,6 @@ echo ""
 
 read -p '-> ' projectname
 
-sudo -v
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
 echo ""
 echo "Updating System and install needed packages..."
 echo ""
