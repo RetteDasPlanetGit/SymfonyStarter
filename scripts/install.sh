@@ -9,7 +9,6 @@ echo ""
 echo "Please enter a Project Name:"
 echo ""
 
-# Prompt for project name
 read -r projectname
 
 echo ""
