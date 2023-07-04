@@ -3,6 +3,12 @@ echo "               Symfony Starter Installer Script              "
 echo "This script requires sudo access. Please enter your password:"
 echo ""
 
+echo ""
+echo "Please enter a Projectname: "
+echo ""
+
+read -p '-> ' projectname
+
 sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
@@ -28,8 +34,8 @@ echo ""
 echo "Cloning Repository..."
 echo ""
 
-git clone https://github.com/RetteDasPlanetGit/SymfonyStarter.git &&
-cd SymfonyStarter
+git clone https://github.com/RetteDasPlanetGit/SymfonyStarter.git $projectname &&
+cd $projectname
 
 echo ""
 echo "Generate new APP_SECRET value..."

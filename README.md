@@ -87,8 +87,8 @@ Follow these steps to deploy your Symfony app:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/RetteDasPlanetGit/SymfonyStarter.git
-    cd SymfonyStarter
+    git clone https://github.com/RetteDasPlanetGit/SymfonyStarter.git Projectname
+    cd Projectname
     ```
 
 2. Configure Symfony app:
