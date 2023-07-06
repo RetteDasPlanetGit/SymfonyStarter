@@ -1,3 +1,5 @@
+![symfony_logo](https://symfony.com/logos/symfony_black_02.png)
+
 # Symfony Starter Project
 
 There are two ways to install and deploy this Project:
@@ -62,14 +64,6 @@ The Symfony app uses the following components:
 - symfony/twig-bundle
 - symfony/validator
 - symfony/yaml
-```
-The development environment also includes the following components:
-```text
-- symfony/maker-bundle
-- symfony/stopwatch
-- symfony/web-profiler-bundle
-- twig/extra-bundle
-- twig/twig
 ```
 The development environment also includes the following components:
 ```text
