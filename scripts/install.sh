@@ -12,14 +12,14 @@ echo ""
 read -r projectname
 
 echo ""
-echo "Updating System and installing needed packages..."
+echo " Updating System and installing needed packages... "
 echo ""
 
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl -y
 
 echo ""
-echo "Installing Docker & Docker Compose..."
+echo " Installing Docker & Docker Compose... "
 echo ""
 
 curl -fsSL https://get.docker.com -o get-docker.sh &&
@@ -30,14 +30,14 @@ sudo systemctl start docker &&
 sudo apt install docker-compose -y
 
 echo ""
-echo "Cloning Repository..."
+echo " Cloning Repository... "
 echo ""
 
 git clone https://github.com/RetteDasPlanetGit/SymfonyStarter.git "$projectname" &&
 cd "$projectname"
 
 echo ""
-echo "Generating new APP_SECRET value..."
+echo " Generating new APP_SECRET value... "
 echo ""
 
 APP_SECRET=$(openssl rand -hex 32)
