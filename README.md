@@ -6,7 +6,7 @@ There are two ways to install and deploy this Project:
 
 ### 1. Execute the following command:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/RetteDasPlanetGit/SymfonyStarter/main/scripts/install.sh | bash 
+Coming Soon ... 
 ```
 ### 2. Follow the following steps to install step by step:
 
